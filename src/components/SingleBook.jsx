@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Button, Card, Col } from "react-bootstrap";
+import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
   state = {
@@ -17,6 +18,7 @@ class SingleBook extends Component {
             <Button variant={this.state.selected ? "secondary" : "primary"}>Compra ora</Button>
           </Card.Body>
         </Card>
+        <CommentArea />
       </Col>
     );
   }
