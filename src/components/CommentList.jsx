@@ -6,7 +6,7 @@ const CommentList = (props) => {
     <ListGroup>
       {props.comments.map((commento, index) => {
         // console.log("commento", commento.comment);
-        return <SingleComment key={index} comment={commento.comment} />;
+        return <SingleComment key={index} comment={commento.comment} author={commento.author} />;
       })}
     </ListGroup>
   );

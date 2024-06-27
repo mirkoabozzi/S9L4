@@ -1,7 +1,8 @@
 import { Component } from "react";
 import CommentList from "./CommentList";
+import AddComment from "./AddComment";
 
-const { ListGroup } = require("react-bootstrap");
+const { ListGroup, Alert } = require("react-bootstrap");
 
 class CommentArea extends Component {
   state = {
@@ -35,7 +36,13 @@ class CommentArea extends Component {
   }
 
   render() {
-    return <CommentList comments={this.state.comments} />;
+    return (
+      <>
+        <h2>Commenti</h2>
+        {this.state.comments.length > 0 ? <CommentList comments={this.state.comments} /> : <Alert> Non ci sono commenti</Alert>}
+        <AddComment asin={this.props.asin} />
+      </>
+    );
   }
 }
 export default CommentArea;
